@@ -55,7 +55,7 @@ def expand_timeline(row):
     return df
 
 def detail_calculations(orig_df):
-    orig_df['contract_start'] = pd.to_datetime(orig_df['contract_start'], format='%m/%d/%Y')
+    orig_df['contract_start'] = pd.to_datetime(orig_df['contract_start'], format='%m/%d/%y')
     orig_df = orig_df.reset_index()
     interim_df = orig_df.apply(lambda x: expand_timeline(x), axis=1)
     
